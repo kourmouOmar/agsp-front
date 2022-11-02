@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <div class="login-container">
+      <div class="login-picture"></div>
+      <div class="login-form-container">
+          <div class="login-form-header">
+              <img src="./assets/img/user.png" alt="mk4" />
+              MK4
+          </div>
+          <div class="login-divider"></div>
+          <div class="login-form-subheader">Bienvenu</div>
+          <form class="login-form" [formGroup]="loginForm">
+              <mat-form-field appearance="outline" class="input-container">
+                  <mat-label>Nom d'utilisateur</mat-label>
+                  <input type="text" matInput formControlName="username"
+                     />
+                      <mat-error *ngIf="loginForm.hasError('required')">
+                        nom d'utilisateur  <strong>required</strong>
+                      </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="input-container">
+                  <mat-label>Mot de passe</mat-label>
+                  <input (keyup.enter)="onSubmit()" [type]="hide ? 'password' : 'text'" matInput
+                      formControlName="password"  />
+                  <button mat-icon-button matSuffix (mousedown)="hide = false" (mouseup)="hide = true"
+                      (mouseleave)="hide = true" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide"
+                      class="eye-button">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                  <mat-error *ngIf="loginForm.hasError('required')">
+                    Mot de passe  <strong>required</strong>
+                  </mat-error>
+              </mat-form-field>
+              <button class="btn-rounded" (click)="onSubmit()" role="button" aria-disabled="false">Connexion</button>
+          </form>
+      </div>
+  </div>
+</div>
+<footer>
+  <div class="left-logo">
+      <img src="./assets/img/Logo_MK4.jpg" width="20%" alt="mk4-logo" />
+  </div>
+
+  <div class="right-logo">
+
+  </div>
+</footer>

@@ -1,0 +1,21 @@
+<header>
+  <div class="sirhus-logo">
+    <img src="./assets/img/Logo_MK4.jpg" width="25%" alt="sirhus" title="sirhus"/>
+  </div>
+  <div class="logout-container">
+    <ng-container *ngIf="profilePicture != null; else elseTemplate">
+      <div class="icon-anonymous">
+        <img [src]="profilePicture" alt="image anonymous"/>
+      </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <div class="icon-anonymous">
+        <img src="./assets/img/anonymos.png" alt="image anonymous"/>
+      </div>
+    </ng-template>
+    <div class="full-name"  >{{ fullName }}</div>
+    <div class="logout">
+      <img src="./assets/img/logout2.png" (click)="logout()" alt="image logout"/>
+    </div>
+  </div>
+</header>

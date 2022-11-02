@@ -1,0 +1,104 @@
+/* le module */
+.le-module{
+  width: 80%;
+  /*height: 100%;*/
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px !important;
+}
+
+/* icon container */
+.icon-container{
+  width: 100%;
+  text-align: center;
+}
+
+.icon-container img{
+  width: 40%;
+}
+
+/* libelle module container */
+.libelle-container{
+  width: 100%;
+  text-align: center;
+  font-family: WorkSans;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #565656;
+  flex-grow: 1;
+  padding-top: 8px !important;
+}
+.module-active{
+  border: 1px solid white;
+  box-shadow: 1px 1px 14px #e2e2e2;
+  border-radius: 30px;
+
+}
+
+.module-active:hover {
+  cursor: pointer;
+  background-color: #00b4ef;
+  color: white;
+  -webkit-transform: scale(1.2);
+transform: scale(1.2);
+}
+
+.module-active:hover  .libelle-container{
+  color: white !important;
+  font-weight: 450;
+}
+
+/*.module-non-active:hover {
+  cursor: not-allowed;
+  background-color: #43494d;
+  color: white;
+}*/
+
+/*.module-non-active:hover  .libelle-container{
+ color: white;
+  font-weight: 600;
+}*/
+
+/* for large devices */
+@media screen and (max-width: 992px) {
+  .libelle-container{
+      font-size: 1rem;
+  }
+  .le-module{
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .module-active:hover {
+      cursor: pointer;
+     /* background-color: #024772;*/
+      color: white;
+  }
+}
+
+/* for small devices */
+@media screen and (max-width: 576px) {
+  .libelle-container{
+      font-size: 1.3rem;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+  }
+  .module-active:hover {
+      cursor: pointer;
+     /* background-color: #024772;*/
+      color: white;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+  }
+  .le-module{
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+

@@ -1,0 +1,3 @@
+<div class="modules">
+  <app-module *ngFor="let module of modulesList; let i = index" [index]="i" [module]="module" class="le-module" [matTooltip]="module.description" ></app-module>
+</div>
