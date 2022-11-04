@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    private loginService:LoginService
   ) {}
 
   ngOnInit(): void {
@@ -47,6 +49,19 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
+    /* login by username & password */
+    this.loginService
+      .authUser(
+        this.loginForm.get('username').value,
+        this.loginForm.get('password').value
+      )
+      .subscribe(() => {
+          localStorage.setItem(
+            'autorisations_user',
+            JSON.stringify(this.autorisations_user)
+          );
+          this.router.navigate(['/modules']);
+      });
 
   }
 

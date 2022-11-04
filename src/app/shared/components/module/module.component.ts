@@ -20,7 +20,7 @@ export class ModuleComponent implements OnInit {
    *
    * @param module
    */
-   openModule(module: any) {
+  openModule(module: any) {
 
   }
 

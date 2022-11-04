@@ -15,11 +15,32 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { ModuleComponent } from './shared/components/module/module.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+
+
 import { ParentModulesComponent } from './shared/components/parent-modules/parent-modules.component';
 import { ClientsComponent } from './modules/clients/clients.component';
 import { ProjectsComponent } from './modules/projects/projects.component';
 import { ParametrageComponent } from './modules/parametrage/parametrage.component';
 import { ChantierComponent } from './modules/chantier/chantier.component';
+import { MenuComponent } from './shared/components/menu/menu.component';
+import { AddClientComponent } from './modules/clients/add-client/add-client.component';
+import { FicheClientComponent } from './modules/clients/fiche-client/fiche-client.component';
+import { AddUserComponent } from './modules/parametrage/add-user/add-user.component';
+import { FicheUserComponent } from './modules/parametrage/fiche-user/fiche-user.component';
+import { CardComponent } from './shared/components/card/card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './services/login.service';
+import { HostService } from './shared/service/host.service';
+import { HttpClientRequest } from './shared/service/http-request-service';
+import { ConfirmationComponent } from './shared/components/confirmation/confirmation.component';
+
 
 @NgModule({
   declarations: [
@@ -33,12 +54,21 @@ import { ChantierComponent } from './modules/chantier/chantier.component';
     ClientsComponent,
     ProjectsComponent,
     ParametrageComponent,
-    ChantierComponent
+    ChantierComponent,
+    MenuComponent,
+    AddClientComponent,
+    FicheClientComponent,
+    AddUserComponent,
+    FicheUserComponent,
+    CardComponent,
+    ConfirmationComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     /** import */
     ReactiveFormsModule,
     FormsModule,
@@ -46,9 +76,27 @@ import { ChantierComponent } from './modules/chantier/chantier.component';
     MatInputModule,
     MatCardModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatDividerModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    MatDialogModule
+
   ],
-  providers: [],
+  exports: [
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatTooltipModule,
+  ],
+  providers: [
+    HostService,
+    LoginService,
+    HttpClientRequest
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

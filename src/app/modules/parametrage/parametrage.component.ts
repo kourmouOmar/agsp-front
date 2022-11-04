@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParametrageComponent implements OnInit {
 
+  menu:any =[
+    {
+      libelle:"Fiche utilisateur",
+      url:"/user/fiche",
+    },
+    {
+      libelle:"Nouveau utilisateur",
+      url:"/user/add",
+    },
+  ]
   constructor() { }
 
   ngOnInit(): void {

@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientsComponent implements OnInit {
 
+  menu:any =[
+    {
+      libelle:"Fiche client",
+      url:"customer-feedback",
+    },
+    {
+      libelle:"Nouveau client",
+      url:"/modules",
+    },
+  ]
   constructor() { }
 
   ngOnInit(): void {

@@ -1,0 +1,86 @@
+<mat-sidenav-container id="sidenavbarContainer" [hasBackdrop]="hasBackdrop">
+  <mat-sidenav
+    id="sidenavbar"
+    [mode]="mode"
+    [opened]="isSideNavbarOpen"
+    [class.sidenavbar-is-opened]="isSideNavbarOpen"
+    role="region"
+    #nav
+  >
+     <!-- sidenavbar content here -->
+     <div class="sidenavbar-content-container">
+      <div>
+        <!-- sidenavbar header -->
+        <div class="sidenavbar-header">
+          <img
+            src="./assets/img/Logo_MK4.jpg"
+            class="mk4-logo cursor logo-widh-img"
+            alt="mK4 logo"
+          />
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!--  logout -->
+        <div class="logout-container">
+          <div class="icon-anonymous">
+            <img src="./assets/img/anonymos.png" alt="image anonymous" />
+          </div>
+          <div class="full-name "  [matTooltip]="fullName">{{ fullName }}</div>
+          <div class="logout">
+            <img
+              src="./assets/img/logout2.png"
+              (click)="logout()"
+              alt="image logout"
+            />
+          </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <!-- lien mes modules -->
+        <div class="mes-modules-container">
+          <div class="mes-modules-icon">
+            <img src="./assets/img/list-icon.png" alt="liste modules" />
+          </div>
+          <div
+            [routerLink]="['/modules']"
+            class="mes-modules-titre menu-item cursor no-outline"
+            (click)="closeMobileSideNavbar()"
+          >
+          Modules
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <!-- submenu content -->
+        <div *ngFor="let menu of menus">
+          <div class="submenu">
+            <div
+              class="submenu-title-container menu-item cursor no-outline"
+              routerLink="{{ menu.url }}">
+              {{menu.libelle}}
+            </div>
+          </div>
+        </div>
+        <!-- end of submenu content -->
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content role="main">
+    <!-- page content here  -->
+    <div class="navbar">
+      <mat-toolbar id="main-toolbar">
+        <img
+          src="./assets/img/menu-icon.png"
+          alt="menu"
+          class="menu-icon cursor"
+          (click)="toggleSideNavbar()"
+        />
+      </mat-toolbar>
+    </div>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+    <!--  end of page content -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

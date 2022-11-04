@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+}
+
+.card-head {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.select-status-class mat-select {
+  max-width: 280px !important;
+  font-size: 1.1rem !important;
+  text-overflow: ellipsis !important;
+  margin-top: 16px !important;
+  font-weight: 600 !important;
+}
+
+#mat-option-filter-id.mat-option {
+  display: flex !important;
+  padding: 4px !important;
+  margin: 0px !important;
+  align-items: center !important;
+  text-transform: capitalize;
+}
+
+#mat-option-filter-id.mat-option {
+  padding: 10px !important;
+}
+
+#mat-option-filter-id.mat-option .mat-icon {
+  margin-right: 0px !important;
+  vertical-align: text-bottom !important;
+  font-size: 2rem !important;
+}
+
+.mat-select-panel-wrap {
+  flex-basis: 80% !important;
+}
+
+.mat-select-panel {
+  border-radius: 6px !important;
+  /* max-height: none !important; */
+}
+
+#mat-option-filter-id {
+  height: 2.6rem !important;
+}
+
+#mat-icon-filter-id.mat-icon {
+  height: 26px !important;
+}
+
+.mat-select-arrow {
+  color: inherit !important;
+}
+
+.card-head-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 18.4px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 16px !important;
+}
+
+.form-filter-dates-class {
+  line-height: 0em !important;
+}
+
+.mat-label-filter-class {
+  font-size: 90%;
+  font-weight: 500;
+  margin-right: 0px;
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+}
+
+.mat-form-field-date-filter-class .mat-form-field-wrapper .mat-form-field-flex {
+  font-size: 17px !important;
+  font-weight: 500 !important;
+}
+
+.mat-form-field-date-filter-class {
+  text-align: center !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  margin-top: 10px !important;
+}
+
+.mat-form-field-date-filter-class
+  .mat-form-field-wrapper
+  .mat-form-field-flex
+  .mat-form-field-infix {
+  width: 6em !important;
+  border-top: none !important;
+}
+
+.btn-filter-date {
+  background-color: white;
+  color: #d50000;
+  padding: 1px 2px 0px 2px !important;
+  margin-top: 0px !important;
+  border-radius: 50%;
+  font-size: 20px !important;
+  outline: none !important;
+  border: 0 !important;
+  margin-top: 15px !important;
+}
+
+.form-filter-dates-class .form-row .form-group {
+  margin-bottom: 0px !important;
+}
+
+.mat-form-field-appearance-legacy
+  .mat-form-field-suffix
+  .mat-datepicker-toggle-default-icon {
+  width: 2em !important;
+}
+
+.btns-actions-class {
+  margin-top: 6px !important;
+  display: flex;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: 100%;
+  margin-right: 1em;
+  justify-content: flex-end;
+}
+
+.mat-datepicker-content-touch .mat-calendar {
+  min-width: unset !important;
+  min-height: unset !important;
+}
+
+.mat-dialog-container {
+  max-height: unset !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-icon-button,
+.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon-button {
+  outline: none !important;
+  border: none !important;
+}
+
+button {
+  outline: none !important;
+  border: none !important;
+}
+
+.btn-action-card {
+  margin-top: 0px !important;
+  border-radius: 3px !important;
+  background-color: #006cc2 !important;
+  padding: 0px 12px !important;
+  color: rgba(255, 255, 255, 0.904) !important;
+  font-size: 18px !important;
+}
+
+.dates-filter-class {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+}
+
+.creator-mat-option {
+  width: 100%;
+  text-align: center !important;
+}
+.color-006cc2 {
+  color: #006cc2;
+}
+.breadcrumb {
+  /* background-color: #f2f2f2 !important; */
+  margin-top: 2rem;
+  padding-left: 1em !important;
+}
+.liens {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.width-export {
+  width: 85vw !important;
+}
+.style-bouton {
+  background-color: #006cc2 !important;
+  color: white;
+}
+.style-bouton:hover {
+  color: white;
+}
+
+.buttonExport {
+  margin-left: auto !important;
+  margin-bottom: 5px !important;
+  margin-right: 10px !important;
+}
+.buttonPeriode {
+  margin-right: auto !important;
+  margin-bottom: 5px !important;
+  margin-left: 10px !important;
+}
+
+.periodetraitement {
+  height: 36px;
+  border-radius: 5px;
+  border: 3px solid #006cc2;
+  background-color: #fff;
+  font-family: WorkSans-Regular;
+  font-size: 15px;
+  font-weight: 600;
+  color: #006cc2;
+  display: inline-block;
+  width: 160px;
+  text-align: center;
+  padding-top: 6.2px;
+  text-transform: capitalize;
+  margin: 0 0 -15px;
+}
+.breadcrumb {
+  background-color: white !important;
+  padding-left: 8px !important;
+}
+.liens {
+  text-decoration: underline;
+  cursor: pointer;
+}

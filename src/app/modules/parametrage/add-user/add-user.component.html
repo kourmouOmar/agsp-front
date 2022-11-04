@@ -1,0 +1,76 @@
+
+<div class="agsp-margin-top"></div>
+<app-card title="Nouveau utilisateur">
+  <div class="page-container">
+    <form [formGroup]="userFormGroup">
+
+        <mat-form-field class="col-6">
+          <mat-label>Nom </mat-label>
+          <input matInput formControlName="nom">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Prénom</mat-label>
+          <input matInput formControlName="prenom">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Téléphone</mat-label>
+          <input matInput formControlName="telephone">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Cin</mat-label>
+          <input matInput formControlName="cin">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput hidden="true">
+          <label>Active</label><br>
+          <input type="radio" id="html" name="active" value="0" formControlName="active">
+          <label for="html">Oui</label><br>
+          <input type="radio" id="css" name="active" value="1" formControlName="active">
+          <label for="css">Non</label><br>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput hidden="true">
+          <label>Bloqué</label><br>
+          <input type="radio" id="html" name="bloque" value="0" formControlName="bloque">
+          <label for="html">Oui</label><br>
+          <input type="radio" id="css" name="bloque" value="1" formControlName="bloque">
+          <label for="css">Non</label><br>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput hidden="true">
+          <label>Rôle</label><br>
+          <input type="radio" id="html" name="role" value="superAdmin" formControlName="role">
+          <label for="html">Super Admin</label><br>
+          <input type="radio" id="css" name="role" value="ChefRegional" formControlName="role">
+          <label for="css">Chef régional</label><br>
+          <input type="radio" id="css" name="role" value="ResponsableTravaux" formControlName="role">
+          <label for="css">Responsable des travaux</label><br>
+        </mat-form-field>
+       <!--Super Admin
+o Admin ( directeur qui accède a tout sauf gestion des utilisateurs)
+o Chef régional (éditeur de fiches)
+o Responsable des travaux (vérificateur et validateur des fiches)-->
+        <div class="btn-right col-8" >
+          <button mat-flat-button class=" primary ajouter-propr-btn"  (click)="ajouterUser()">Enregistré</button>
+        </div>
+
+
+      </form>
+  </div>
+</app-card>

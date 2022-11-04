@@ -10,22 +10,26 @@ export class ParentModulesComponent implements OnInit {
     {
       libelle:"Client",
       iconeActive:"customer-feedback",
-      active:true
+      active:true,
+      description:""
     },
     {
       libelle:"Projet",
       iconeActive:"project-management",
-      active:true
+      active:true,
+      description:""
     }
     ,{
       libelle:"Chantier",
       iconeActive:"construction",
-      active:true
+      active:true,
+      description:""
     }
     ,{
       libelle:"Adminstration",
       iconeActive:"administrator",
-      active:true
+      active:true,
+      description:""
     }
   ];
   hover:boolean = false;

@@ -1,0 +1,24 @@
+/*** general styles ***/
+* {
+  box-sizing: border-box;
+  font-family: "WorkSans";
+}
+.mg-right-15px {
+  margin-right: 15px !important;
+}
+.page-container {
+  width: 80vw;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}

@@ -1,0 +1,31 @@
+<span >
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a class="color-006cc2" href="/modules">Accueil </a>
+      </li>
+
+      <!--ss<li *ngFor="let element of breadcrumbUrl" class="breadcrumb-item">
+        <a class="color-006cc2 liens" (click)="go(element.url)">{{
+          element.libelle
+        }}</a>
+      </li>-->
+      <li class="breadcrumb-item active" aria-current="page"> {{title}} </li>
+    </ol>
+  </nav>
+</span>
+
+<mat-card class="sirhus-card">
+  <div [ngClass]="{ 'card-head': true }">
+    <mat-card-title class="row">
+      <div class="row">
+        <!-- card title -->
+        <div class=" col-sm-5 col-md-3 col-lg-4 col-xl-4">
+           {{title}}
+        </div>
+      </div>
+
+    </mat-card-title>
+  </div>
+  <ng-content></ng-content>
+</mat-card>
