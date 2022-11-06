@@ -10,14 +10,16 @@ export class ClientsComponent implements OnInit {
   menu:any =[
     {
       libelle:"Fiche client",
-      url:"customer-feedback",
+       url:"/client/fiche",
     },
     {
       libelle:"Nouveau client",
-      url:"/modules",
+      url:"/client/add",
     },
   ]
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }

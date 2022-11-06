@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Consulter client</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="clientFormGroup">
+
+    <mat-form-field class="col-6">
+      <mat-label>Désignation </mat-label>
+      <input matInput formControlName="designation">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Ice</mat-label>
+      <input matInput formControlName="ice">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Téléphone</mat-label>
+      <input matInput formControlName="telephone"  pattern="(\+212|0)([ \-_/]*)(\d[ \-_/]*){9}">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Fax</mat-label>
+      <input matInput formControlName="fax">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Adresse</mat-label>
+      <input matInput formControlName="adresse">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Ville</mat-label>
+      <input matInput formControlName="ville">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Nom complet du contact</mat-label>
+      <input matInput formControlName="nomCompletContact">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput hidden="true">
+      <label>Active</label><br>
+      <input matInput formControlName="active">
+    </mat-form-field>
+</form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Annuler</button>
+</mat-dialog-actions>

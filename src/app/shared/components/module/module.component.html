@@ -5,7 +5,7 @@
     <div class="libelle-container" >{{ module.libelle }} </div>
   </div>
 
-<div *ngIf="module.active" class="le-module module-active wow zoomIn" data-wow-delay="0.4s" (mouseover)="hover=true" (mouseleave)="hover=false" (mouseover)="changeModuleImage(true)" (mouseout)="changeModuleImage(false)" (click)="openModule(module)"
+<div *ngIf="module.active" class="le-module module-active wow zoomIn" data-wow-delay="0.4s" (mouseover)="hover=true" (mouseleave)="hover=false" (mouseover)="changeModuleImage(true)" (mouseout)="changeModuleImage(false)" (click)="openModule(module.url)"
   [ngStyle]="{backgroundColor: hover==true  ? module.colorLibelle : 'white' }">
     <div class="icon-container">
         <img [src]=" './assets/img/icon-module/'+module.iconeActive+'.png' " alt="image module"/>

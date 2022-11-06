@@ -22,6 +22,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 import { ParentModulesComponent } from './shared/components/parent-modules/parent-modules.component';
@@ -40,6 +41,11 @@ import { LoginService } from './services/login.service';
 import { HostService } from './shared/service/host.service';
 import { HttpClientRequest } from './shared/service/http-request-service';
 import { ConfirmationComponent } from './shared/components/confirmation/confirmation.component';
+import { SharedServiceService } from './shared/service/snack-service.service';
+import { DetailUserComponent } from './modules/parametrage/detail-user/detail-user.component';
+import { UpdateUserComponent } from './modules/parametrage/update-user/update-user.component';
+import { DetailClientComponent } from './modules/clients/detail-client/detail-client.component';
+import { UpdateClientComponent } from './modules/clients/update-client/update-client.component';
 
 
 @NgModule({
@@ -62,6 +68,10 @@ import { ConfirmationComponent } from './shared/components/confirmation/confirma
     FicheUserComponent,
     CardComponent,
     ConfirmationComponent,
+    DetailUserComponent,
+    UpdateUserComponent,
+    DetailClientComponent,
+    UpdateClientComponent,
 
   ],
   imports: [
@@ -83,19 +93,20 @@ import { ConfirmationComponent } from './shared/components/confirmation/confirma
     MatTableModule,
     MatPaginatorModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
 
   ],
   exports: [
     MatToolbarModule,
     MatSidenavModule,
-    MatIconModule,
     MatTooltipModule,
   ],
   providers: [
     HostService,
     LoginService,
-    HttpClientRequest
+    HttpClientRequest,
+
   ],
   bootstrap: [AppComponent]
 })

@@ -9,3 +9,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background: white;
   color: black;
 }
+.oppenSnackBarSuccessClass {
+  color: #FFF;
+  background-color: #008000;
+}
+
+.oppenSnackBarFailureClass {
+  color: #FFF;
+  background-color: #FF0000;
+}

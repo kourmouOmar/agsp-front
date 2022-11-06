@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-module',
@@ -11,7 +12,7 @@ export class ModuleComponent implements OnInit {
   @Input() index:any;
   hover:boolean= false;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +22,7 @@ export class ModuleComponent implements OnInit {
    * @param module
    */
   openModule(module: any) {
-
+    this.router.navigate([module]);
   }
 
   changeModuleImage(active: boolean) {

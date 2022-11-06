@@ -1,3 +1,63 @@
 
-<div class="agsp-margin-top "></div>
-<p style="color: black;">add-client works!</p>
+<div class="agsp-margin-top"></div>
+<app-card title="Nouveau client">
+  <div class="page-container">
+    <form [formGroup]="clientFormGroup">
+
+        <mat-form-field class="col-6">
+          <mat-label>Désignation </mat-label>
+          <input matInput formControlName="designation">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Ice</mat-label>
+          <input matInput formControlName="ice">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Téléphone</mat-label>
+          <input matInput formControlName="telephone"  pattern="(\+212|0)([ \-_/]*)(\d[ \-_/]*){9}">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Fax</mat-label>
+          <input matInput formControlName="fax">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Adresse</mat-label>
+          <input matInput formControlName="adresse">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Ville</mat-label>
+          <input matInput formControlName="ville">
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Nom complet du contact</mat-label>
+          <input matInput formControlName="nomCompletContact">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput hidden="true">
+          <label>Active</label><br>
+          <input type="radio" id="html" name="active" value="true" formControlName="active">
+          <label for="html">Oui</label><br>
+          <input type="radio" id="css" name="active" value="false" formControlName="active">
+          <label for="css">Non</label><br>
+        </mat-form-field>
+
+        <div class="btn-right col-10" >
+          <button mat-flat-button class=" primary ajouter-propr-btn"  (click)="ajouterClient()">Enregistré</button>
+        </div>
+
+
+    </form>
+  </div>
+</app-card>

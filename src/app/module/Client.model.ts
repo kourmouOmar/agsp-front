@@ -1,8 +1,7 @@
 import { Projet } from "./Projet.model";
 
 export interface  Client {
-  idClient:number;
-  a:string;
+  idClient:number| null ;
   designation:string;
   adresse:string;
   ville:string;
@@ -12,6 +11,4 @@ export interface  Client {
   telephone:string;
   fax:string;
   email:string;
-  listOfProjetDTO:Array<Projet>;
-
 }

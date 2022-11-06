@@ -1,6 +1,6 @@
 
 <div class="agsp-margin-top"></div>
-<app-card title="Nouveau utilisateur">
+<app-card title="Modification utilisateur">
   <div class="page-container">
     <form [formGroup]="userFormGroup">
 
@@ -37,18 +37,18 @@
         <mat-form-field>
           <input matInput hidden="true">
           <label>Active</label><br>
-          <input type="radio" id="html" name="active" value="true" formControlName="active">
+          <input type="radio" id="html" name="active" [value]="true" formControlName="active">
           <label for="html">Oui</label><br>
-          <input type="radio" id="css" name="active" value="false" formControlName="active">
+          <input type="radio" id="css" name="active" [value]="false" formControlName="active">
           <label for="css">Non</label><br>
         </mat-form-field>
 
         <mat-form-field>
           <input matInput hidden="true">
           <label>Bloqué</label><br>
-          <input type="radio" id="html" name="bloque" value="true" formControlName="bloque">
+          <input type="radio" id="html" name="bloque" [value]="true" formControlName="bloque">
           <label for="html">Oui</label><br>
-          <input type="radio" id="css" name="bloque" value="false" formControlName="bloque">
+          <input type="radio" id="css" name="bloque" [value]="false" formControlName="bloque">
           <label for="css">Non</label><br>
         </mat-form-field>
 
@@ -69,7 +69,7 @@
           Responsable des travaux (vérificateur et validateur des fiches)
         -->
         <div class="btn-right col-8" >
-          <button mat-flat-button class=" primary ajouter-propr-btn"  (click)="ajouterUser()">Enregistré</button>
+          <button mat-flat-button class=" primary ajouter-propr-btn"  (click)="updateUser()">Soumettre</button>
         </div>
 
 

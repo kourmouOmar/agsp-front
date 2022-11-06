@@ -87,3 +87,7 @@ section {
 .btn-right{
   text-align: right;
 }
+.mat-input-element:disabled
+{
+  color: black;
+}

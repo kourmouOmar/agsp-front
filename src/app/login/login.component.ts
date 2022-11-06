@@ -52,8 +52,8 @@ export class LoginComponent implements OnInit {
     /* login by username & password */
     this.loginService
       .authUser(
-        this.loginForm.get('username').value,
-        this.loginForm.get('password').value
+        this.loginForm.get('username')?.value,
+        this.loginForm.get('password')?.value
       )
       .subscribe(() => {
           localStorage.setItem(

@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>Consulter utilisateur</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="userFormGroup">
+
+    <mat-form-field class="col-6">
+      <mat-label>Nom </mat-label>
+      <input matInput formControlName="nom">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Prénom</mat-label>
+      <input matInput formControlName="prenom">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Téléphone</mat-label>
+      <input matInput formControlName="telephone"  pattern="(\+212|0)([ \-_/]*)(\d[ \-_/]*){9}">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Cin</mat-label>
+      <input matInput formControlName="cin">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput hidden="true">
+      <label>Active</label><br>
+      <input matInput formControlName="active" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput hidden="true">
+      <label>Bloqué</label><br>
+      <input matInput formControlName="bloque" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput hidden="true">
+      <label>Rôle</label><br>
+      <input matInput formControlName="role" >
+    </mat-form-field>
+   <!--
+      Super Admin
+      Admin ( directeur qui accède a tout sauf gestion des utilisateurs)
+      Chef régional (éditeur de fiches)
+      Responsable des travaux (vérificateur et validateur des fiches)
+    -->
+</form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Annuler</button>
+</mat-dialog-actions>

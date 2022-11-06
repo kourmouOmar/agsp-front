@@ -19,9 +19,13 @@
   <div [ngClass]="{ 'card-head': true }">
     <mat-card-title class="row">
       <div class="row">
-        <!-- card title -->
-        <div class=" col-sm-5 col-md-3 col-lg-4 col-xl-4">
-           {{title}}
+        <!-- card title   -->
+        <div class="col-sm-5 col-md-3 col-lg-4 col-xl-4">
+          {{title}}
+        </div>
+        <div class="col-8 text-end" *ngIf="activeExport == true" >
+          <img src="./assets/icon-action/excel.png"  width="5%" alt="">
+          <span> Export</span>
         </div>
       </div>
 

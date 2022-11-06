@@ -11,25 +11,36 @@ export class ParentModulesComponent implements OnInit {
       libelle:"Client",
       iconeActive:"customer-feedback",
       active:true,
-      description:""
+      description:"",
+      url:"/client/fiche"
     },
     {
       libelle:"Projet",
       iconeActive:"project-management",
       active:true,
-      description:""
+      description:"",
+      url:"/projet/fiche"
+    },
+    {
+      libelle:"cabinet de conseil en Architecture",
+      iconeActive:"sketch",
+      active:true,
+      description:"",
+      url:"/projet/fiche"
     }
     ,{
       libelle:"Chantier",
       iconeActive:"construction",
       active:true,
-      description:""
+      description:"",
+      url:"/chantier/fiche"
     }
     ,{
       libelle:"Adminstration",
       iconeActive:"administrator",
       active:true,
-      description:""
+      description:"",
+      url:"/user/fiche"
     }
   ];
   hover:boolean = false;

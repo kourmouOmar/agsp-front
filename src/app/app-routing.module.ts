@@ -8,6 +8,7 @@ import { ModulesComponent } from './modules/modules.component';
 import { AddUserComponent } from './modules/parametrage/add-user/add-user.component';
 import { FicheUserComponent } from './modules/parametrage/fiche-user/fiche-user.component';
 import { ParametrageComponent } from './modules/parametrage/parametrage.component';
+import { UpdateUserComponent } from './modules/parametrage/update-user/update-user.component';
 import { AuthGuard } from './services/auth-guard.guard';
 
 const routes: Routes = [
@@ -26,6 +27,27 @@ const routes: Routes = [
       {
         path: "fiche",
         component: FicheUserComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: "update",
+        component: UpdateUserComponent,
+        canActivate: [AuthGuard],
+      },
+    ]
+  },
+  {
+    path: "client",
+    component: ClientsComponent,
+    children: [
+      {
+        path: "add",
+        component: AddClientComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: "fiche",
+        component: FicheClientComponent,
         canActivate: [AuthGuard],
       },
     ]
