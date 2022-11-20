@@ -14,8 +14,6 @@ export class DetailClientComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) private data: any,
     private formBuilder: FormBuilder,
   ) {
-    console.log(data.client);
-
     this.clientFormGroup = this.formBuilder.group({
       designation:[{value:data.client.designation,disabled:true}],
 	    adresse:[{value:data.client.adresse,disabled:true}],

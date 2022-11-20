@@ -22,11 +22,18 @@ export class ParentModulesComponent implements OnInit {
       url:"/projet/fiche"
     },
     {
-      libelle:"cabinet de conseil en Architecture",
+      libelle:"Bureau d'études",
       iconeActive:"sketch",
       active:true,
       description:"",
-      url:"/projet/fiche"
+      url:"/bureau-etude/fiche"
+    },
+    {
+      libelle:"Bureau de contrôle",
+      iconeActive:"tablet",
+      active:true,
+      description:"",
+      url:"/bureau-controle/fiche"
     }
     ,{
       libelle:"Chantier",

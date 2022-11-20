@@ -1,0 +1,78 @@
+
+<div class="agsp-margin-top"></div>
+<app-card title="Fiche projet" [activeExport]="false">
+  <div class="page-container">
+
+    <mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. " #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="numero">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> numero </th>
+          <td mat-cell *matCellDef="let row"> {{row.numero}} </td>
+        </ng-container>
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="designation">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Désignation </th>
+          <td mat-cell *matCellDef="let row"> {{row.designation}} </td>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="telephoneResponsable">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Téléphone  du contact</th>
+          <td mat-cell *matCellDef="let row"> {{row.telephoneResponsable}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="emailResponsable">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email responsable </th>
+          <td mat-cell *matCellDef="let row"> {{row.emailResponsable}} </td>
+        </ng-container>
+
+         <!-- ID Column -->
+         <ng-container matColumnDef="client">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Client </th>
+          <td mat-cell *matCellDef="let row"> ice : {{row.clientDto?.ice}}</td>
+        </ng-container>
+
+        <!-- Fruit Column -->
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+          <td mat-cell *matCellDef="let row">
+            <div class="example-button-container">
+            </div>
+
+              <button mat-icon-button color="warn" aria-label="Example icon button with a delete icon" (click)="deleteProjet(row)">
+               <img src="./assets/icon-action/delete.png" alt="" width="60%">
+              </button>
+              <button mat-icon-button color="primary" aria-label="Example icon button with a edit icon"  (click)="updateProjet(row)">
+                <img src="./assets/icon-action/edit.png" alt="" width="60%">
+              </button>
+              <button mat-icon-button color="primary" aria-label="Example icon button with a edit icon"  (click)="detailProjet(row)">
+                <img src="./assets/icon-action/file.png" alt="" width="60%">
+              </button>
+
+
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+
+  </div>
+</app-card>

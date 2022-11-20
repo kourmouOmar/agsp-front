@@ -1,0 +1,73 @@
+
+<div class="agsp-margin-top"></div>
+<app-card title="Modification projet">
+  <div class="page-container">
+    <form [formGroup]="projetControleFormGroup">
+
+      <mat-form-field class="col-6">
+        <mat-label>Désignation </mat-label>
+        <input matInput formControlName="designation">
+      </mat-form-field>
+
+      <mat-form-field class="col-6">
+        <mat-label>Numéro</mat-label>
+        <input matInput formControlName="numero">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput hidden="true">
+        <label>Active</label><br>
+        <input type="radio" id="html" name="active" [value]="true" formControlName="active">
+        <label for="html">Oui</label>
+        <input type="radio" id="css" name="active" [value]="false" formControlName="active">
+        <label for="css">Non</label><br>
+      </mat-form-field>
+
+      <mat-form-field class="col-6">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="emailResponsable" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+      </mat-form-field>
+
+      <mat-form-field class="col-6">
+        <mat-label>Téléphone</mat-label>
+        <input matInput formControlName="telephoneResponsable"  pattern="(\+212|0)([ \-_/]*)(\d[ \-_/]*){9}">
+      </mat-form-field>
+
+      <mat-form-field class="col-6">
+        <mat-label>Nom complet du responsable</mat-label>
+        <input matInput formControlName="nomCompletResponsable">
+      </mat-form-field>
+
+      <mat-form-field >
+        <mat-label>Bureau d'étude</mat-label>
+        <select matNativeControl  formControlName="bureauEtudeDTO">
+          <option value="null">----</option>
+          <option  *ngFor="let item of bureauEtudes" [value]="item.idBureauEtude">{{item.designation}} -- {{item.nomCompletResponsable}}</option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field >
+        <mat-label>Bureau de contrôle</mat-label>
+        <select matNativeControl  formControlName="bureauControleDTO">
+          <option value="null">----</option>
+          <option  *ngFor="let item of bureauControles" [value]="item.idBureauControle">{{item.designation}} -- {{item.nomCompletResponsable}}</option>
+        </select>
+      </mat-form-field>
+
+      <mat-form-field >
+        <mat-label>Client</mat-label>
+        <select matNativeControl  formControlName="clientDTO">
+          <option [value]="null">----</option>
+          <option  *ngFor="let item of clients" [value]="item.idClient">{{item.designation}} -- {{item.ice}}</option>
+        </select>
+      </mat-form-field>
+
+
+      <div class="btn-right col-10" >
+        <button mat-flat-button class=" primary ajouter-propr-btn"  (click)="updateProjet()">Enregistré</button>
+      </div>
+
+
+  </form>
+  </div>
+</app-card>

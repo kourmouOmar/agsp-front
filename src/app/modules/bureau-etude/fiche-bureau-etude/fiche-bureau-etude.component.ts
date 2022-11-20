@@ -5,32 +5,32 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Client } from 'src/app/module/Client.model';
-import { ClientService } from 'src/app/services/client.service';
+import { BureauEtudeService } from 'src/app/services/bureau-etude.service';
 import { ConfirmationComponent } from 'src/app/shared/components/confirmation/confirmation.component';
-import { DetailClientComponent } from '../detail-client/detail-client.component';
+import { DetailClientComponent } from '../../clients/detail-client/detail-client.component';
+import { DetailBureauEtudeComponent } from '../detail-bureau-etude/detail-bureau-etude.component';
 
 @Component({
-  selector: 'app-fiche-client',
-  templateUrl: './fiche-client.component.html',
-  styleUrls: ['./fiche-client.component.css']
+  selector: 'app-fiche-bureau-etude',
+  templateUrl: './fiche-bureau-etude.component.html',
+  styleUrls: ['./fiche-bureau-etude.component.css']
 })
-export class FicheClientComponent implements OnInit {
-  displayedColumns: string[] = ['designation', 'ice', 'nomCompletContact','telephone', 'action'];
-  dataSource!: MatTableDataSource<Client>;
+export class FicheBureauEtudeComponent implements OnInit {
+  displayedColumns: string[] = ['designation', 'fax', 'nomCompletResponsable','telephoneResponsable', 'action'];
+  dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private  clientService:ClientService,
+    private  bureauEtudeService:BureauEtudeService,
     private _snackBar: MatSnackBar,
     private router: Router,
     public dialog: MatDialog
     ) {
   }
   ngOnInit(): void {
-    this.clientService.getAllClient().subscribe(res => {
+    this.bureauEtudeService.getAllBueauEtudes().subscribe(res => {
       this.dataSource = new MatTableDataSource(res);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -46,24 +46,24 @@ export class FicheClientComponent implements OnInit {
     }
   }
 
-  detailClient(row:any){
-      const dialogRef = this.dialog.open(DetailClientComponent,{
+  detailBureauEtude(row:any){
+      const dialogRef = this.dialog.open(DetailBureauEtudeComponent,{
         data:{
-          client: row
+          bureauEtude: row
         }
       });
       dialogRef.afterClosed().subscribe(result => {
       });
+  }
+  updateBureauEtude(row:any){
+    this.router.navigateByUrl('/bureau-etude/update', { state: { bureauEtude: row } });
+  }
 
-  }
-  updateClient(row:any){
-    this.router.navigateByUrl('/client/update', { state: { client: row } });
-  }
-  deleteClient(row:any){
+  deleteBureauEtude(row:any){
     const dialogRef = this.dialog.open(ConfirmationComponent, {
       data: {
-        title: 'Suppression client',
-        message: "Vous êtes sûr de supprimer client ?",
+        title: "Suppression bureau d'étude",
+        message: "Vous êtes sûr de supprimer bureau d'étude ?",
         buttonText: {
           ok: 'Valider',
           cancel: 'Annuler'
@@ -74,14 +74,14 @@ export class FicheClientComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed) {
-        this.clientService.deleteclientrById(row).subscribe(
+        this.bureauEtudeService.deleteBureauEtudeById(row).subscribe(
           {
             next : () => {
               this._snackBar.open("Suppression avec succes ","Fermer", {
                 duration: 10000,
                 panelClass: 'oppenSnackBarSuccessClass'
               });
-              this.dataSource.data = this.dataSource.data.filter(v=> v.idClient != row.idClient)
+              this.dataSource.data = this.dataSource.data.filter(v=> v.idBureauEtude != row.idBureauEtude)
             },
             error : () => {
               this._snackBar.open("Impossible de supprime déja lie","Fermer", {
@@ -94,4 +94,5 @@ export class FicheClientComponent implements OnInit {
       }
     });
   }
+
 }

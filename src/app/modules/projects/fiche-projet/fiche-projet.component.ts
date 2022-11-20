@@ -5,36 +5,47 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Client } from 'src/app/module/Client.model';
+import { BureauControleService } from 'src/app/services/bureau-controle.service';
+import { BureauEtudeService } from 'src/app/services/bureau-etude.service';
 import { ClientService } from 'src/app/services/client.service';
+import { ProjetService } from 'src/app/services/projet.service';
 import { ConfirmationComponent } from 'src/app/shared/components/confirmation/confirmation.component';
-import { DetailClientComponent } from '../detail-client/detail-client.component';
+import { DetailProjetComponent } from '../detail-projet/detail-projet.component';
 
 @Component({
-  selector: 'app-fiche-client',
-  templateUrl: './fiche-client.component.html',
-  styleUrls: ['./fiche-client.component.css']
+  selector: 'app-fiche-projet',
+  templateUrl: './fiche-projet.component.html',
+  styleUrls: ['./fiche-projet.component.css']
 })
-export class FicheClientComponent implements OnInit {
-  displayedColumns: string[] = ['designation', 'ice', 'nomCompletContact','telephone', 'action'];
-  dataSource!: MatTableDataSource<Client>;
+export class FicheProjetComponent implements OnInit {
+  displayedColumns: string[] = ['numero', 'designation', 'emailResponsable','telephoneResponsable','client', 'action'];
+  dataSource!: MatTableDataSource<any>;
+  clients:any;
+  bureauEtudes:any;
+  bureauControles:any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private  clientService:ClientService,
+    private  projetService:ProjetService,
+    private clientService:ClientService,
+    private bureauEtudeService:BureauEtudeService,
+    private bureauControleService:BureauControleService,
     private _snackBar: MatSnackBar,
     private router: Router,
     public dialog: MatDialog
     ) {
   }
   ngOnInit(): void {
-    this.clientService.getAllClient().subscribe(res => {
+    this.projetService.getAllProjet().subscribe(res => {
       this.dataSource = new MatTableDataSource(res);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
+    this.clientService.getAllClient().subscribe(res=>{this.clients =res});
+    this.bureauControleService.getAllBueauControles().subscribe(res=>{this.bureauControles = res});
+    this.bureauEtudeService.getAllBueauEtudes().subscribe(res=>{this.bureauEtudes = res});
   }
 
   applyFilter(event: Event) {
@@ -46,24 +57,24 @@ export class FicheClientComponent implements OnInit {
     }
   }
 
-  detailClient(row:any){
-      const dialogRef = this.dialog.open(DetailClientComponent,{
+  detailProjet(row:any){
+      const dialogRef = this.dialog.open(DetailProjetComponent,{
         data:{
-          client: row
+          projet: row
         }
       });
       dialogRef.afterClosed().subscribe(result => {
       });
+  }
+  updateProjet(row:any){
+    this.router.navigateByUrl('/projet/update', { state: { projet: row, clients: this.clients, bureauEtudes:this.bureauEtudes, bureauControles: this.bureauControles } });
+  }
 
-  }
-  updateClient(row:any){
-    this.router.navigateByUrl('/client/update', { state: { client: row } });
-  }
-  deleteClient(row:any){
+  deleteProjet(row:any){
     const dialogRef = this.dialog.open(ConfirmationComponent, {
       data: {
-        title: 'Suppression client',
-        message: "Vous êtes sûr de supprimer client ?",
+        title: "Suppression projet",
+        message: "Vous êtes sûr de supprimer projet ?",
         buttonText: {
           ok: 'Valider',
           cancel: 'Annuler'
@@ -74,14 +85,14 @@ export class FicheClientComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed) {
-        this.clientService.deleteclientrById(row).subscribe(
+        this.projetService.deleteProjetById(row).subscribe(
           {
             next : () => {
               this._snackBar.open("Suppression avec succes ","Fermer", {
                 duration: 10000,
                 panelClass: 'oppenSnackBarSuccessClass'
               });
-              this.dataSource.data = this.dataSource.data.filter(v=> v.idClient != row.idClient)
+              this.dataSource.data = this.dataSource.data.filter(v=> v.idProjet != row.idProjet)
             },
             error : () => {
               this._snackBar.open("Impossible de supprime déja lie","Fermer", {
@@ -94,4 +105,5 @@ export class FicheClientComponent implements OnInit {
       }
     });
   }
+
 }

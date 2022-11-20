@@ -46,6 +46,24 @@ import { DetailUserComponent } from './modules/parametrage/detail-user/detail-us
 import { UpdateUserComponent } from './modules/parametrage/update-user/update-user.component';
 import { DetailClientComponent } from './modules/clients/detail-client/detail-client.component';
 import { UpdateClientComponent } from './modules/clients/update-client/update-client.component';
+import { BureauEtudeComponent } from './modules/bureau-etude/bureau-etude.component';
+import { BureauControleComponent } from './modules/bureau-controle/bureau-controle.component';
+import { AddBureauEtudeComponent } from './modules/bureau-etude/add-bureau-etude/add-bureau-etude.component';
+import { FicheBureauEtudeComponent } from './modules/bureau-etude/fiche-bureau-etude/fiche-bureau-etude.component';
+import { UpdateBureauEtudeComponent } from './modules/bureau-etude/update-bureau-etude/update-bureau-etude.component';
+import { DetailBureauEtudeComponent } from './modules/bureau-etude/detail-bureau-etude/detail-bureau-etude.component';
+import { DetailBureauControleComponent } from './modules/bureau-controle/detail-bureau-controle/detail-bureau-controle.component';
+import { AddBureauControleComponent } from './modules/bureau-controle/add-bureau-controle/add-bureau-controle.component';
+import { UpdateBureauControleComponent } from './modules/bureau-controle/update-bureau-controle/update-bureau-controle.component';
+import { FicheBureauControleComponent } from './modules/bureau-controle/fiche-bureau-controle/fiche-bureau-controle.component';
+import { FicheProjetComponent } from './modules/projects/fiche-projet/fiche-projet.component';
+import { AddProjetComponent } from './modules/projects/add-projet/add-projet.component';
+import { UpdateProjetComponent } from './modules/projects/update-projet/update-projet.component';
+import { DetailProjetComponent } from './modules/projects/detail-projet/detail-projet.component';
+import { DetailChantierComponent } from './modules/chantier/detail-chantier/detail-chantier.component';
+import { AddChantierComponent } from './modules/chantier/add-chantier/add-chantier.component';
+import { UpdateChantierComponent } from './modules/chantier/update-chantier/update-chantier.component';
+import { FicheChantierComponent } from './modules/chantier/fiche-chantier/fiche-chantier.component';
 
 
 @NgModule({
@@ -72,6 +90,24 @@ import { UpdateClientComponent } from './modules/clients/update-client/update-cl
     UpdateUserComponent,
     DetailClientComponent,
     UpdateClientComponent,
+    BureauEtudeComponent,
+    BureauControleComponent,
+    AddBureauEtudeComponent,
+    FicheBureauEtudeComponent,
+    UpdateBureauEtudeComponent,
+    DetailBureauEtudeComponent,
+    DetailBureauControleComponent,
+    AddBureauControleComponent,
+    UpdateBureauControleComponent,
+    FicheBureauControleComponent,
+    FicheProjetComponent,
+    AddProjetComponent,
+    UpdateProjetComponent,
+    DetailProjetComponent,
+    DetailChantierComponent,
+    AddChantierComponent,
+    UpdateChantierComponent,
+    FicheChantierComponent,
 
   ],
   imports: [

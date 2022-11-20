@@ -1,16 +1,16 @@
-import { Chantier } from "./Chantier.model";
+import { BureauControle } from "./BureauControle.model";
+import { BureauEtude } from "./BureauEtude.model";
 import { Client } from "./Client.model";
 
-
-export interface  Projet {
-  idProjet:number;
+export interface Projet {
+  idProjet:number | null ;
   numero:string;
   designation:string;
   active:boolean;
   emailResponsable:string;
   telephoneResponsable:string;
   nomCompletResponsable:string;
-  listOfChantierDTO:Array<Chantier>;
-  clientDTO:Client;
-
+  bureauEtudeDto:BureauEtude;
+  bureauControleDto:BureauControle;
+  clientDto:Client;
 }

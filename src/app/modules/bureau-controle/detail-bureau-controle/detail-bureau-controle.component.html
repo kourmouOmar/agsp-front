@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>Consulter bureau de contrôle</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="bureauControleFormGroup">
+
+    <mat-form-field class="col-6">
+      <mat-label>Désignation </mat-label>
+      <input matInput formControlName="designation">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Numéro</mat-label>
+      <input matInput formControlName="numero">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="emailResponsable" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Téléphone</mat-label>
+      <input matInput formControlName="telephoneResponsable"  pattern="(\+212|0)([ \-_/]*)(\d[ \-_/]*){9}">
+    </mat-form-field>
+
+    <mat-form-field class="col-6">
+      <mat-label>Fax</mat-label>
+      <input matInput formControlName="fax">
+    </mat-form-field>
+
+
+    <mat-form-field class="col-6">
+      <mat-label>Nom complet du responsable</mat-label>
+      <input matInput formControlName="nomCompletResponsable">
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Annuler</button>
+</mat-dialog-actions>
